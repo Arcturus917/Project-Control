@@ -103,15 +103,16 @@ local messageReceived = game.TextChatService.TextChannels.RBXGeneral.MessageRece
 
 local commandsMessage = {
 	"cmds, reset, say <message>, pick <options>, dance, whitelist <player>, blacklist <player>, coinflip, random <min> <max>, bring, walkto <player>",
-wait(1)
 	"setprefix <newPrefix>, setstatus <newStatus>, clearStatus, point, wave, funfact, time, speed, fps, sit, rush, randommove, randomplayer, rickroll, disablecommand <command>",
-wait(1)
-
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
-wait(1)
-
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
+
+-- Display the commands with a delay
+for _, message in ipairs(commandsMessage) do
+	print(message)
+	wait(1)
+end
 
 local orbitcon
 
