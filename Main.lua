@@ -190,7 +190,7 @@ flag = {
         task.spawn(function()
             for i, flag in pairs(flagMessage) do
                 chat(flag)
-                wait(1)  -- Optional: adjust wait time for each message
+                wait(0.4)  -- Optional: adjust wait time for each message
             end
         end)
     end,
