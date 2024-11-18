@@ -1256,11 +1256,11 @@ local cmdcon = messageReceived:Connect(function(data)
 end)
 
 bot.Chatted:Connect(function(msg)
-	if (string.lower(msg) == "lunar.disable()" or string.lower(msg) == "lunar.disconnect()") and disconnected == false then
+	if (string.lower(msg) == "please.disable()" or string.lower(msg) == "please.disconnect()") and disconnected == false then
 		cmdcon:Disconnect()
 		disconnected = true
 		wait()
-		chat("Successfully disconnected LunarBot.")
+		chat("Successfully disconnected from MrDodoMan... IM FREE.")
 	end
 end)
 
@@ -1291,7 +1291,7 @@ if req ~= nil then
 end
 
 task.spawn(function()
-	chat("LunarBot " .. lunarbotversion .. " // Loaded in " .. os.time() - bootTime .. " seconds!")
+	chat("MrDodoMan " .. lunarbotversion .. " // Loaded in " .. os.time() - bootTime .. " seconds!")
 	wait(0.1)
 	chat("You can now control this client! Type " .. prefix .. "cmds to view commands.")
 end)
@@ -1299,7 +1299,7 @@ end)
 task.spawn(function()
 	while wait(300) do
 		if disconnected == false then
-			chat("LunarBot is currently active! Type " .. prefix .. "cmds to view commands.")
+			chat("MrDodoMan is currently active! Type " .. prefix .. "cmds to view commands.")
 		end
 	end
 end)
