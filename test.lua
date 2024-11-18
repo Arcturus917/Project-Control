@@ -202,7 +202,7 @@ end
 
 --[[ end configs, don't edit this especially if you have no idea what Lua is lmao ]]--
 
-local lunarbotversion = "v0.1.3 Owner Only Release"
+local lunarbotversion = "v0.1.3 Tester Only Release (made by mrdodoman27)"
 local lunarbotchangelogs = "Added a few commands!"
 
 local gameData = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
