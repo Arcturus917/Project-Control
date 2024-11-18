@@ -68,7 +68,7 @@ local function chat(msg)
 end
 
 local funfacts = {
-	"I was created was created on 11/17/22 by MrDodoMan27.",
+	"I was created was created on 11/17/22.",
 	"I added this for no reason",
 	"I made this for no reason",
 	"My dad came back from getting the milk 0.03 seconds ago.",
@@ -76,13 +76,13 @@ local funfacts = {
 	"If you spend a penny, you lose that penny.",
 	"Press 'Y' to jump.",
 	"Commands are added to LunarBot almost every day.",
-	"I was developed and scripted by MrDodoMan.",
+	"I was developed and scripted.",
 	"Im is a self-bot, meaning that, yes, I AM A REAL PERSON. I'm watching... :)",
 	"Among Us is extremely old.",
 	"Press Alt + F4 to get 1 billion dollars on the spot.",
 	"Press U to walk forward.",
 	"At the time of writing this fun fact list, there are people in the server.",
-	"MrDodoMan was first tested in the game: a literal baseplate.",
+	"I was first tested in the game: a literal baseplate.",
 	"I found a lucky penny!",
 	"You found this fun fact.",
 	"The sandwich was invented in the 1700s.",
@@ -286,14 +286,14 @@ commands = {
 			
 			if plr then
 				bot.Character:SetPrimaryPartCFrame(CFrame.new(plr.Character.HumanoidRootPart.Position))
-				chat("📸 CAUGHT IN 4K BY MRDODOMAN AND MOON CARETAKER 📸")
+				chat("📸 CAUGHT IN 4K BY MRDODOMAN 📸")
 			end
 		end,
 	},
 	ping = {
 		Name = "ping",
 		Aliases = {"getping"},
-		Use = "Chats MrDodoMans's ping!",
+		Use = "Chats my's ping!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			chat("Ping: " .. tostring(math.floor(game:GetService("Stats").PerformanceStats.Ping:GetValue() + 0.5)) .. " ms")
@@ -302,7 +302,7 @@ commands = {
 	executor = {
 		Name = "executor",
 		Aliases = {"identifyexecutor", "getexec", "exec"},
-		Use = "Gives you the executor that is running MrDodoMan!",
+		Use = "Gives you the executor that is running Me!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			chat("Executor: " .. identifyexecutor() or "Unknown")
@@ -311,7 +311,7 @@ commands = {
 	lua = {
 		Name = "lua",
 		Aliases = {"runlua", "run", "luau"},
-		Use = "Gives you the executor that is running MrDodoMan!",
+		Use = "Gives you the executor that is running me!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			if speaker ~= bot.Name then
@@ -335,7 +335,7 @@ commands = {
 	setinterval = {
 		Name = "setinterval",
 		Aliases = {"setrandommoveinterval", "setint", "setinteger"},
-		Use = "Respawns MrDodoMan!",
+		Use = "Respawns me!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			if speaker ~= bot.Name then return end
