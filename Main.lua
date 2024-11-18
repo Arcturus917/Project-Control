@@ -22,7 +22,7 @@ local whitelisted = {
 	bot.Name,
 }
 
-local showbotchat = _G.showBotChat or false --setting this to true will cause all messages sent by either commands or MrDodoMan-BOT to begin with [MrDodoMan-BOT]
+local showbotchat = _G.showBotChat or false --setting this to true will cause all messages sent by either commands or LunarBot to begin with [LunarBot]
 local allwhitelisted = _G.defaultAllWhitelisted or false --set to true if you want everyone to be whitelisted, nicK is not responsible for anything players make you do or say.
 local randommoveinteger = _G.defaultRandomMoveInteger or 15 --interval in which how long randommove waits until choosing another direction
 local prefix = _G.defaultPrefix or "." --DO NOT SET TO MORE THAN 1 CHARACTER!
@@ -34,14 +34,14 @@ if _G.preWhitelisted and type(_G.preWhitelisted) == "table" then
 end
 
 if prefix:len() > 1 then
-	warn("MrDodoMan27 // Prefix cannot be more than 1 character long!")
+	warn("LunarBot // Prefix cannot be more than 1 character long!")
 	return
 end
 
 --[[ end configs, don't edit this especially if you have no idea what Lua is lmao ]]--
 
-local MrDodoMan-BOTversion = "v0.2.3 Private Beta Release"
-local MrDodoMan-BOTchangelogs = "Added a few commands!"
+local lunarbotversion = "v0.2.3 private Beta"
+local lunarbotchangelogs = "Added a few commands!"
 
 local gameData = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 local status = nil
@@ -61,7 +61,7 @@ local TI = TweenInfo.new(
 
 local function chat(msg)
 	if showbotchat == true then
-		game.TextChatService.TextChannels.RBXGeneral:SendAsync("[MrDodoMan-BOT]: " .. msg)
+		game.TextChatService.TextChannels.RBXGeneral:SendAsync("[LunarBot]: " .. msg)
 	else
 		game.TextChatService.TextChannels.RBXGeneral:SendAsync(msg)
 	end
@@ -75,9 +75,8 @@ local funfacts = {
 	"We are playing Roblox.",
 	"If you spend a penny, you lose that penny.",
 	"Press 'Y' to jump.",
-	"Commands are added to MrDodoMan-BOT almost every day.",
-	"MrDodoMan-BOT was developed and scripted by probablYnicK.",
-	"MrDodoMan-BOT is a self-bot, meaning that, yes, I AM A REAL PERSON. I'm watching!",
+	"LunarBot was developed and scripted by MrDodoMan.",
+	"LunarBot is a self-bot, meaning that, yes, I AM A REAL PERSON. I'm watching... :)",
 	"Among Us is extremely old.",
 	"Press Alt + F4 to get 1 billion dollars on the spot.",
 	"Press U to walk forward.",
@@ -228,7 +227,7 @@ commands = {
 	reset = {
 		Name = "reset",
 		Aliases = {"re"},
-		Use = "Respawns MrDodoMan-BOT!",
+		Use = "Respawns LunarBot!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local hum = bot.Character:FindFirstChildWhichIsA("Humanoid")
@@ -241,7 +240,7 @@ commands = {
 	rejoin = {
 		Name = "rejoin",
 		Aliases = {"rj"},
-		Use = "Rejoins MrDodoMan-BOT!",
+		Use = "Rejoins LunarBot!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			if speaker ~= bot.Name and altctrl == false then chat("Invalid permissions to rejoin.") return end
@@ -252,7 +251,7 @@ commands = {
 				wait()
 				game:GetService('TeleportService'):Teleport(game.PlaceId, game.Players.LocalPlayer)
 			else
-				print("MrDodoMan-BOT is rejoining...")
+				print("LunarBot is rejoining...")
 				game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 			end
 		end,
@@ -260,7 +259,7 @@ commands = {
 	catch = {
 		Name = "catch",
 		Aliases = {"catchin4k", "c14"},
-		Use = "Makes MrDodoMan-BOT catch the given player in 4K!",
+		Use = "Makes LunarBot catch the given player in 4K!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local plr
@@ -349,7 +348,7 @@ commands = {
 	toggleall = {
 		Name = "toggleall",
 		Aliases = {"all", "allwl", "wlall"},
-		Use = "Respawns MrDodoMan-BOT!",
+		Use = "Respawns LunarBot!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			task.spawn(function()
@@ -393,7 +392,7 @@ commands = {
 	unfollow = {
 		Name = "unfollow",
 		Aliases = {"unfollowplr"},
-		Use = "Respawns MrDodoMan-BOT!",
+		Use = "Respawns LunarBot!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -408,7 +407,7 @@ commands = {
 	follow = {
 		Name = "follow",
 		Aliases = {"followplr"},
-		Use = "Makes MrDodoMan-BOT follow you or the given player!",
+		Use = "Makes LunarBot follow you or the given player!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local plr
@@ -482,14 +481,14 @@ commands = {
 			local chosen = choosefrom[math.random(1, #choosefrom)]
 			
 			if chosen then
-				chat("MrDodoMan-BOT chose: " .. chosen)
+				chat("LunarBot chose: " .. chosen)
 			end
 		end,
 	},
 	dance = {
 		Name = "dance",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT dance!",
+		Use = "Makes LunarBot dance!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e dance")
@@ -498,7 +497,7 @@ commands = {
 	point = {
 		Name = "point",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT point!",
+		Use = "Makes LunarBot point!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e point")
@@ -507,7 +506,7 @@ commands = {
 	stadium = {
 		Name = "stadium",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT do the stadium emote!",
+		Use = "Makes LunarBot do the stadium emote!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e stadium")
@@ -516,7 +515,7 @@ commands = {
 	cheer = {
 		Name = "cheer",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT cheer!",
+		Use = "Makes LunarBot cheer!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e cheer")
@@ -525,7 +524,7 @@ commands = {
 	wave = {
 		Name = "wave",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT wave!",
+		Use = "Makes LunarBot wave!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e wave")
@@ -534,7 +533,7 @@ commands = {
 	sit = {
 		Name = "sit",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT sit!",
+		Use = "Makes LunarBot sit!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			bot.Character.Humanoid.Sit = true
@@ -543,7 +542,7 @@ commands = {
 	salute = {
 		Name = "salute",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT salute!",
+		Use = "Makes LunarBot salute!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game.Players:Chat("/e salute")
@@ -552,7 +551,7 @@ commands = {
 	jump = {
 		Name = "jump",
 		Aliases = {},
-		Use = "Makes MrDodoMan-BOT jump!",
+		Use = "Makes LunarBot jump!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			bot.Character.Humanoid.Jump = true
@@ -576,7 +575,7 @@ commands = {
 	whitelist = {
 		Name = "whitelist",
 		Aliases = {"wl"},
-		Use = "Whitelists a player, meaning they can use MrDodoMan-BOT. An owner-only command!",
+		Use = "Whitelists a player, meaning they can use MrDodoMan-Bot. An owner-only command!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local towhitelist = args[2]
@@ -587,7 +586,7 @@ commands = {
 				if towhitelist == "all" then
 					for i, player in pairs(game.Players:GetPlayers()) do
 						table.insert(whitelisted, player.Name)
-						local bl = player:FindFirstChild("MrDodoMan-BOTBlacklist")
+						local bl = player:FindFirstChild("LunarBotBlacklist")
 						if bl then bl:Destroy() else warn(player.DisplayName .. " was not blacklisted!") end
 					end
 					
@@ -599,7 +598,7 @@ commands = {
 					
 					if plr then
 						table.insert(whitelisted, plr.Name)
-						local bl = plr:FindFirstChild("MrDodoMan-BOTBlacklist")
+						local bl = plr:FindFirstChild("LunarBotBlacklist")
 						if bl then bl:Destroy() else warn(player.DisplayName .. " was not blacklisted!") end
 						chat("Whitelisted " .. plr.DisplayName .. "! Type .cmds to view commands.")
 					else
@@ -612,7 +611,7 @@ commands = {
 	blacklist = {
 		Name = "blacklist",
 		Aliases = {"bl"},
-		Use = "Blacklists a player meaning they cannot use MrDodoMan-BOT. Owner-only command!",
+		Use = "Blacklists a player meaning they cannot use LunarBot. Owner-only command!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local toblacklist = args[2]
@@ -622,13 +621,13 @@ commands = {
 			if toblacklist then
 				if toblacklist == "all" then
 					for i, p in pairs(game.Players:GetPlayers()) do
-						local alrbl = p:FindFirstChild("MrDodoMan-BOTBlacklist")
+						local alrbl = p:FindFirstChild("LunarBotBlacklist")
 						
 						if alrbl then alrbl:Destroy() end
 					
 						local new = Instance.new("BoolValue")
 						new.Parent = p
-						new.Name = "MrDodoMan-BOTBlacklist"
+						new.Name = "LunarBotBlacklist"
 						new.Value = true
 					end
 					
@@ -639,13 +638,13 @@ commands = {
 					local plr = searchPlayers(toblacklist)
 					
 					if plr then
-						local alrbl = plr:FindFirstChild("MrDodoMan-BOTBlacklist")
+						local alrbl = plr:FindFirstChild("LunarBotBlacklist")
 						
 						if alrbl then alrbl:Destroy() end
 					
 						local new = Instance.new("BoolValue")
 						new.Parent = plr
-						new.Name = "MrDodoMan-BOTBlacklist"
+						new.Name = "LunarBotBlacklist"
 						new.Value = true
 						alwhitelisted = false
 						chat("Blacklisted " .. plr.DisplayName .. "! They can no longer run commands.")
@@ -683,7 +682,7 @@ commands = {
 				local rnd = math.random(tonumber(args[2]), tonumber(args[3]))
 				
 				if rnd then
-					chat("MrDodoMan-BOT // Generated random number between " .. args[2] .. " and " .. args[3] .. ": " .. rnd)
+					chat("LunarBot // Generated random number between " .. args[2] .. " and " .. args[3] .. ": " .. rnd)
 				else
 					chat("Aw, snap! An error occured while generating a random number.")
 				end
@@ -693,7 +692,7 @@ commands = {
 	bring = {
 		Name = "bring",
 		Aliases = {},
-		Use = "Brings MrDodoMan-BOT to the player that chatted the command.",
+		Use = "Brings LunarBot to the player that chatted the command.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -708,7 +707,7 @@ commands = {
 	copychat = {
 		Name = "copychat",
 		Aliases = {"cc", "copyc", "cchat"},
-		Use = "Makes MrDodoMan-BOT copy everything the given player says.",
+		Use = "Makes LunarBot copy everything the given player says.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -736,7 +735,7 @@ commands = {
 	uncopychat = {
 		Name = "uncopychat",
 		Aliases = {"uncc", "uncopyc", "uncchat"},
-		Use = "Makes MrDodoMan-BOT stop copying everything the copychat player says.",
+		Use = "Makes LunarBot stop copying everything the copychat player says.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -744,7 +743,7 @@ commands = {
 					chat("Stopped copying " .. copychatplayer.DisplayName .. "!")
 					copychatplayer = nil
 				else
-					chat("MrDodoMan-BOT is not copying anyone!")
+					chat("LunarBot is not copying anyone!")
 				end
 			end)
 		end,
@@ -752,7 +751,7 @@ commands = {
 	to = {
 		Name = "to",
 		Aliases = {},
-		Use = "Teleports MrDodoMan-BOT to the <player> given.",
+		Use = "Teleports LunarBot to the <player> given.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -779,7 +778,7 @@ commands = {
 	walkto = {
 		Name = "walkto",
 		Aliases = {"come"},
-		Use = "Makes MrDodoMan-BOT walk to you or the given player!",
+		Use = "Makes LunarBot walk to you or the given player!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -804,7 +803,7 @@ commands = {
 	setprefix = {
 		Name = "setprefix",
 		Aliases = {"prefix"},
-		Use = "Sets the prefix of MrDodoMan-BOT! Owner-only command!",
+		Use = "Sets the prefix of MrDodoMan! Owner-only command!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -825,7 +824,7 @@ commands = {
 	setstatus = {
 		Name = "setstatus",
 		Aliases = {},
-		Use = "Sets the status of MrDodoMan-BOT. When a status is set, the bot will no longer take commands.",
+		Use = "Sets the status of MrDodoMan. When a status is set, the bot will no longer take commands.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -872,11 +871,11 @@ commands = {
 	time = {
 		Name = "time",
 		Aliases = {"currenttime"},
-		Use = "Gives you MrDodoMan-BOT's current time in its timezone.",
+		Use = "Gives you LunarBot's current time in its timezone.",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
-				chat("MrDodoMan-BOT's current time is: " .. os.date("%I:%M:%S %p"))
+				chat("LunarBot's current time is: " .. os.date("%I:%M:%S %p"))
 			end)
 		end,
 	},
@@ -904,7 +903,7 @@ commands = {
 	walkspeed = {
 		Name = "walkspeed",
 		Aliases = {"speed"},
-		Use = "Sets MrDodoMan-BOT's walkspeed to <speed>!",
+		Use = "Sets LunarBot's walkspeed to <speed>!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -925,11 +924,11 @@ commands = {
 	fps = {
 		Name = "fps",
 		Aliases = {},
-		Use = "Chats MrDodoMan-BOT's current FPS!",
+		Use = "Chats LunarBot's current FPS!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
-				chat("MrDodoMan-BOT's FPS is: " .. tostring(math.round(game.Workspace:GetRealPhysicsFPS())))
+				chat("LunarBot's FPS is: " .. tostring(math.round(game.Workspace:GetRealPhysicsFPS())))
 			end)
 		end,
 	},
@@ -1057,7 +1056,7 @@ commands = {
 	randommove = {
 		Name = "randommove",
 		Aliases = {"rndmove", "autowalk"},
-		Use = "Toggles MrDodoMan-BOT's random movement feature!",
+		Use = "Toggles LunarBot's random movement feature!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -1074,7 +1073,7 @@ commands = {
 	rush = {
 		Name = "rush",
 		Aliases = {"rushbegin"},
-		Use = "Makes MrDodoMan-BOT turn into Rush from DOORS!",
+		Use = "Makes LunarBot turn into Rush from DOORS!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			pcall(function()
@@ -1206,7 +1205,7 @@ local cmdcon = messageReceived:Connect(function(data)
 	local msg = string.lower(message)
 	
 	if string.sub(msg, 1, 1) == prefix then
-		if speakerplayer:FindFirstChild("MrDodoMan-BOTBlacklist") then
+		if speakerplayer:FindFirstChild("LunarBotBlacklist") then
 			return
 		end
 
@@ -1223,14 +1222,14 @@ local cmdcon = messageReceived:Connect(function(data)
 		local cmd = checkCommands(args[1])
 		
 		if status ~= nil and speaker ~= bot.Name then
-			chat("MrDodoMan-BOT Status // " .. status .. " // Commands are disabled.")
+			chat("LunarBot Status // " .. status .. " // Commands are disabled.")
 			return
 		end
 		
 		if cmd ~= nil then
 			if cmd.Enabled == false then
 				chat("The command " .. cmd.Name .. " is currently disabled. Please request it to be re-enabled by " .. bot.DisplayName .. ".")
-				print("MrDodoMan-BOT CMDLogs // " .. speaker .. " attempted to run command: " .. cmd.Name .. " with arguments: " .. tts(args) .. "while the command was disabled.")
+				print("LunarBot CMDLogs // " .. speaker .. " attempted to run command: " .. cmd.Name .. " with arguments: " .. tts(args) .. "while the command was disabled.")
 				return
 			else
 				cmd.CommandFunction(message, args, speaker)
@@ -1245,7 +1244,7 @@ local cmdcon = messageReceived:Connect(function(data)
 					return r
 				end
 				
-				print("MrDodoMan-BOT CMDLogs // " .. speaker .. " ran command: " .. cmd.Name .. " with arguments: " .. tts(args))
+				print("LunarBot CMDLogs // " .. speaker .. " ran command: " .. cmd.Name .. " with arguments: " .. tts(args))
 			end
 		else
 			warn("Could not find command: " .. args[1] .. "!")
@@ -1256,11 +1255,11 @@ local cmdcon = messageReceived:Connect(function(data)
 end)
 
 bot.Chatted:Connect(function(msg)
-	if (string.lower(msg) == "lunar.disable()" or string.lower(msg) == "lunar.disconnect()") and disconnected == false then
+	if (string.lower(msg) == "b.disable()" or string.lower(msg) == "b.disconnect()") and disconnected == false then
 		cmdcon:Disconnect()
 		disconnected = true
 		wait()
-		chat("Successfully disconnected MrDodoMan-BOT.")
+		chat("Successfully disconnected from MrDodoMan... IM FREE!!!.")
 	end
 end)
 
@@ -1276,10 +1275,10 @@ if req ~= nil then
 	    Body = game.HttpService:JSONEncode({
 		content = "<@598958193032560642>",
 		embeds = {
-			title = "MrDodoMan-BOT Execution",
-			description = "MrDodoMan-BOT has been executed by " .. bot.DisplayName .. "!",
+			title = "LunarBot Execution",
+			description = "LunarBot has been executed by " .. bot.DisplayName .. "!",
 			color = 0xAADDFF,
-			author = "MrDodoMan-BOT Execution Bot",
+			author = "LunarBot Execution Bot",
 			fields = {
 				{name = "User ID", value = bot.UserId, inline = true},
 				{name = "Name", value = bot.Name, inline = true},
@@ -1291,15 +1290,15 @@ if req ~= nil then
 end
 
 task.spawn(function()
-	chat("MrDodoMan-BOT " .. MrDodoMan-BOTversion .. " // Loaded in " .. os.time() - bootTime .. " seconds!")
+	chat("MrDodoMan " .. lunarbotversion .. " // Loaded in " .. os.time() - bootTime .. " seconds!")
 	wait(0.1)
 	chat("You can now control this client! Type " .. prefix .. "cmds to view commands.")
 end)
 
 task.spawn(function()
-	while wait(300) do
+	while wait(100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) do
 		if disconnected == false then
-			chat("MrDodoMan-BOT is currently active! Type " .. prefix .. "cmds to view commands.")
+			chat("The bot is currently active! Type " .. prefix .. "cmds to view commands.")
 		end
 	end
 end)
