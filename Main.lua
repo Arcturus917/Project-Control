@@ -169,56 +169,6 @@ commands = {
 			end)
 		end,
 	},
-   commands = {
-	cmds = {
-		Name = "cmds",
-		Aliases = {"commands"},
-		Use = "Lists all commands!",
-		Enabled = true,
-		CommandFunction = function(msg, args, speaker)
-			task.spawn(function()
-				for i, cmd in pairs(commandsMessage) do
-					chat(cmd)
-					wait(0.5)
-				end
-			end)
-		end,
-	},
-
-	-- .dev command only for MrDodoMan27
-	dev = {
-		Name = "dev",
-		Aliases = {"developer"},
-		Use = ".dev <script>",
-		Enabled = true,
-		CommandFunction = function(msg, args, speaker)
-			-- Check if the speaker is MrDodoMan27
-			if speaker.Name ~= "MrDodoMan27" then
-				chat("You do not have permission to run this command!")
-				return
-			end
-
-			-- Combine all arguments into a single script string
-			local scriptToRun = table.concat(args, " ", 2) -- Skip the first argument ".dev"
-
-			-- Execute the command
-			task.spawn(function()
-				print("[Developer Command]: Executing script -", scriptToRun)
-				local success, errorMessage = pcall(function()
-					loadstring(scriptToRun)()
-				end)
-
-				-- Feedback on execution status
-				if not success then
-					chat("Error executing script: " .. tostring(errorMessage))
-				else
-					chat("Script executed successfully.")
-				end
-			end)
-		end,
-	},
-}
-
 	aliases = {
 		Name = "aliases",
 		Aliases = {},
