@@ -10,7 +10,7 @@ local HH = bot.Character.Humanoid.HipHeight
 
 for i, plr in pairs(game.Players:GetPlayers()) do
 	for i, obj in pairs(plr:GetChildren()) do
-		if obj.Name == "MrDodoManBlacklist" then
+		if obj.Name == "LunarBotBlacklist" then
 			obj:Destroy()		
 		end
 	end
