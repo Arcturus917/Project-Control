@@ -151,19 +151,6 @@ local function checkCommands(cmd)
 	return nil
 end
 
-local nazi --don't change, could lead to errors
-
-local function checkNazi(cmd)
-	for i, naziCmd in pairs(nazi) do  -- fixed loop variable name
-		if naziCmd == cmd or (table.find(naziCmd.Aliases, cmd) or naziCmd.Name == cmd) then  -- fixed logical error
-			return naziCmd	
-		end
-	end
-	
-	return nil
-end
-
-
 local rushing = false
 local rickrolling = false
 
