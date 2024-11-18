@@ -111,7 +111,7 @@ local commandsMessage = {
 -- Display the commands with a delay
 for _, message in ipairs(commandsMessage) do
 	print(message)
-	wait(1)
+	task.wait(1)
 end
 
 local orbitcon
