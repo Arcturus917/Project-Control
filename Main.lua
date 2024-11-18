@@ -228,7 +228,7 @@ commands = {
 	reset = {
 		Name = "reset",
 		Aliases = {"re"},
-		Use = "Respawns MrDodoMan!",
+		Use = "Respawns Me!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local hum = bot.Character:FindFirstChildWhichIsA("Humanoid")
@@ -248,7 +248,7 @@ commands = {
 		
 			if #game.Players:GetPlayers() <= 1 then
 				print("Rejoining (NEW SERVER)")
-				game.Players.LocalPlayer:Kick("\nMrDodoMan - Rejoining...")
+				game.Players.LocalPlayer:Kick("\nI'm - Rejoining...")
 				wait()
 				game:GetService('TeleportService'):Teleport(game.PlaceId, game.Players.LocalPlayer)
 			else
@@ -315,7 +315,7 @@ commands = {
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			if speaker ~= bot.Name then
-				chat("You do not have permission to run LuaU from MrDodoMan.")
+				chat("You do not have permission to run LuaU from me.")
 				return
 			end
 			
@@ -489,7 +489,7 @@ commands = {
 	dance = {
 		Name = "dance",
 		Aliases = {},
-		Use = "Makes MrDodoman dance!",
+		Use = "Makes me dance!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e dance")
@@ -498,7 +498,7 @@ commands = {
 	point = {
 		Name = "point",
 		Aliases = {},
-		Use = "Makes MrDodoMan point!",
+		Use = "Makes me point!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e point")
