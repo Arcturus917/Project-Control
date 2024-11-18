@@ -212,21 +212,6 @@ commands = {
 			end)
 		end,
 	},
-nazi = {
-	naz = {
-		Name = "naz",
-		Aliases = {"nazi"},
-		Use = "sends naz flag!",
-		Enabled = true,
-		CommandFunction = function(msg, args, speaker)
-			task.spawn(function()
-				for i, cmd in pairs(naziMessage) do
-					chat(naz)
-					wait(0.5)
-				end
-			end)
-		end,
-	},
 	aliases = {
 		Name = "aliases",
 		Aliases = {},
