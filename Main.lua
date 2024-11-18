@@ -34,13 +34,13 @@ if _G.preWhitelisted and type(_G.preWhitelisted) == "table" then
 end
 
 if prefix:len() > 1 then
-	warn("LunarBot // Prefix cannot be more than 1 character long!")
+	warn("MrDodoMan27 // Prefix cannot be more than 1 character long!")
 	return
 end
 
 --[[ end configs, don't edit this especially if you have no idea what Lua is lmao ]]--
 
-local lunarbotversion = "v0.1.3 Public Beta Release"
+local lunarbotversion = "v0.2.3 Private Beta Release"
 local lunarbotchangelogs = "Added a few commands!"
 
 local gameData = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
