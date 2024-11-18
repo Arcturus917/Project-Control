@@ -1291,7 +1291,7 @@ if req ~= nil then
 end
 
 task.spawn(function()
-	chat("Bot" .. lunarbotversion .. " Loaded in " .. os.time() - bootTime .. " seconds!")
+	chat("Bot " .. lunarbotversion .. " Loaded in " .. os.time() - bootTime .. " seconds!")
 	wait(0.1)
 	chat("You can now control this client! Type " .. prefix .. "cmds to view commands.")
 end)
