@@ -71,11 +71,11 @@ local funfacts = {
 	"I was created was created on 11/17/22.",
 	"I added this for no reason",
 	"I made this for no reason",
-	"My dad came back from getting the milk 0.03 seconds ago.",
+	"My dad never came back from getting the milk.",
 	"We are playing Roblox.",
 	"If you spend a penny, you lose that penny.",
 	"Press 'Y' to jump.",
-	"Commands are added to LunarBot almost every day.",
+	"Commands are added to me almost every day.",
 	"I was developed and scripted.",
 	"Im is a self-bot, meaning that, yes, I AM A REAL PERSON. I'm watching... :)",
 	"Among Us is extremely old.",
@@ -106,6 +106,7 @@ local commandsMessage = {
 	"setprefix <newPrefix>, setstatus <newStatus>, clearStatus, point, wave, funfact, time, speed, fps, sit, rush, randommove, randomplayer, rickroll, disablecommand <command>",
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
+	"naz",
 }
 local flagMessage = {
 	"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥",
