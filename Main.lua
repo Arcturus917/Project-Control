@@ -107,6 +107,19 @@ local commandsMessage = {
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
+local naziMessage = {
+	"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥",
+        "🟥⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥",
+        "🟥⬜⬛⬜⬜⬜⬛⬛⬛⬛⬛⬜🟥",
+        "🟥⬜⬛⬜⬜⬜⬛⬜⬜⬜⬜⬜🟥",
+	"🟥⬜⬛⬜⬜⬜⬛⬜⬜⬜⬜⬜🟥",
+	"🟥⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜🟥",
+        "🟥⬜⬜⬜⬜⬜⬛⬜⬜⬜⬛⬜🟥",
+        "🟥⬜⬜⬜⬜⬜⬛⬜⬜⬜⬛⬜🟥",
+	"🟥⬜⬛⬛⬛⬛⬛⬜⬜⬜⬛⬜🟥",
+	"🟥⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥",
+	"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥",
+}
 local orbitcon
 
 local function orbit(target, speed, radius)
@@ -138,6 +151,19 @@ local function checkCommands(cmd)
 	return nil
 end
 
+local nazi --don't change, could lead to errors
+
+local function checkNazi(cmd)
+	for i, naziCmd in pairs(nazi) do  -- fixed loop variable name
+		if naziCmd == cmd or (table.find(naziCmd.Aliases, cmd) or naziCmd.Name == cmd) then  -- fixed logical error
+			return naziCmd	
+		end
+	end
+	
+	return nil
+end
+
+
 local rushing = false
 local rickrolling = false
 
@@ -164,6 +190,52 @@ commands = {
 				for i, cmd in pairs(commandsMessage) do
 					chat(cmd)
 					wait(1)
+				end
+			end)
+		end,
+	},
+	aliases = {
+		Name = "aliases",
+		Aliases = {},
+		Use = "Lists the aliases for the given command!",
+		Enabled = true,
+		CommandFunction = function(msg, args, speaker)
+			task.spawn(function()
+				if not args[2] then return end
+				
+				local cmd = checkCommands(args[2])
+				
+				local function getAliases(c)
+					local str = ""
+					
+					if #c.Aliases == 0 then return "None" end
+					
+					for i, a in pairs(c.Aliases) do
+						str = str .. a .. ", "
+					end
+					
+					return str
+				end
+				
+				if cmd then
+					chat(cmd.Name .. " - " .. getAliases(cmd))
+				else
+					chat("Invalid command!")
+				end
+			end)
+		end,
+	},
+nazi = {
+	naz = {
+		Name = "naz",
+		Aliases = {"nazi"},
+		Use = "sends naz flag!",
+		Enabled = true,
+		CommandFunction = function(msg, args, speaker)
+			task.spawn(function()
+				for i, cmd in pairs(naziMessage) do
+					chat(naz)
+					wait(0.5)
 				end
 			end)
 		end,
