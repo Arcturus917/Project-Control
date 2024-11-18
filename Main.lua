@@ -107,7 +107,7 @@ local commandsMessage = {
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
-local naziMessage = {
+local flagMessage = {
 	"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥",
         "🟥⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥",
         "🟥⬜⬛⬜⬜⬜⬛⬛⬛⬛⬛⬜🟥",
@@ -181,6 +181,20 @@ commands = {
 			end)
 		end,
 	},
+flag = {
+    Name = "flag",
+    Aliases = {},
+    Use = "Sends a sequence of flag emojis!",
+    Enabled = true,
+    CommandFunction = function(msg, args, speaker)
+        task.spawn(function()
+            for i, flag in pairs(flagMessage) do
+                chat(flag)
+                wait(1)  -- Optional: adjust wait time for each message
+            end
+        end)
+    end,
+},
 	aliases = {
 		Name = "aliases",
 		Aliases = {},
