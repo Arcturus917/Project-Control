@@ -107,13 +107,6 @@ local commandsMessage = {
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
-
--- Display the commands with a delay
-for _, message in ipairs(commandsMessage) do
-	print(message)
-	task.wait(1)
-end
-
 local orbitcon
 
 local function orbit(target, speed, radius)
