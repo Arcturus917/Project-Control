@@ -107,6 +107,12 @@ local commandsMessage = {
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
+-- Display each set of commands with a 1-second delay
+for i = 1, #commandsMessage do
+	print(commandsMessage[i])
+	task.wait(1)  -- Wait for 1 second before showing the next command set
+end
+
 local orbitcon
 
 local function orbit(target, speed, radius)
