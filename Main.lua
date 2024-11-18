@@ -34,7 +34,7 @@ if _G.preWhitelisted and type(_G.preWhitelisted) == "table" then
 end
 
 if prefix:len() > 1 then
-	warn("LunarBot // Prefix cannot be more than 1 character long!")
+	warn("My Prefix cannot be more than 1 character long!")
 	return
 end
 
@@ -102,10 +102,10 @@ local funfacts = {
 local messageReceived = game.TextChatService.TextChannels.RBXGeneral.MessageReceived
 
 local commandsMessage = {
-	"cmds, reset, say <message>, pick <options>, dance, whitelist <player>, blacklist <player>, coinflip, random <min> <max>, bring, walkto <player>",
-	"setprefix <newPrefix>, setstatus <newStatus>, clearStatus, point, wave, funfact, time, speed, fps, sit, rush, randommove, randomplayer, rickroll, disablecommand <command>",
-	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
-	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
+	"|cmds|, |reset|, |say <message>|, |pick <options>|, |dance|, |whitelist <player>|, |blacklist <player>|, |coinflip|, |random <min> <max>|, |bring|, |walkto <player>|",
+	"|setprefix <newPrefix>|, |setstatus <newStatus>|, |clearStatus|, |point|, |wave|, |funfact|, |time|, |speed|, |fps|, |sit|, |rush|, |randommove|, |randomplayer|, |rickroll|, |disablecommand <command>|",
+	"|salute|, |announce <announcement>|, |help <command>|, |jobid|, |aliases <command>|, |math <operation> <nums>|, |changelogs|, |gamename|, |playercount|, |maxplayers|, |toggleall|, |setinterval|",
+	"|lua <lua>|, |ping, catch <player>|, |copychat <player>|, |cheer|, |stadium|, |spin <speed>|, |float <height>|, |orbit <speed> <radius>|, |jump|, |follow|, |unfollow|, |executor|",
 }
 
 local orbitcon
@@ -228,7 +228,7 @@ commands = {
 	reset = {
 		Name = "reset",
 		Aliases = {"re"},
-		Use = "Respawns LunarBot!",
+		Use = "Respawns MrDodoMan!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			local hum = bot.Character:FindFirstChildWhichIsA("Humanoid")
@@ -489,7 +489,7 @@ commands = {
 	dance = {
 		Name = "dance",
 		Aliases = {},
-		Use = "Makes LunarBot dance!",
+		Use = "Makes MrDodoman dance!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e dance")
@@ -498,7 +498,7 @@ commands = {
 	point = {
 		Name = "point",
 		Aliases = {},
-		Use = "Makes LunarBot point!",
+		Use = "Makes MrDodoMan point!",
 		Enabled = true,
 		CommandFunction = function(msg, args, speaker)
 			game:GetService("Players"):Chat("/e point")
@@ -1291,7 +1291,7 @@ if req ~= nil then
 end
 
 task.spawn(function()
-	chat("MrDodoMan " .. lunarbotversion .. " // Loaded in " .. os.time() - bootTime .. " seconds!")
+	chat("MrDodoMan " .. lunarbotversion .. " Loaded in " .. os.time() - bootTime .. " seconds!")
 	wait(0.1)
 	chat("You can now control this client! Type " .. prefix .. "cmds to view commands.")
 end)
