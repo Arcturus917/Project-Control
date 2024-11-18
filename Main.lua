@@ -1291,7 +1291,7 @@ if req ~= nil then
 end
 
 task.spawn(function()
-	chat("MrDodoMan " .. lunarbotversion .. " Loaded in " .. os.time() - bootTime .. " seconds!")
+	chat("Bot" .. lunarbotversion .. " Loaded in " .. os.time() - bootTime .. " seconds!")
 	wait(0.1)
 	chat("You can now control this client! Type " .. prefix .. "cmds to view commands.")
 end)
@@ -1299,7 +1299,7 @@ end)
 task.spawn(function()
 	while wait(300) do
 		if disconnected == false then
-			chat("MrDodoMan is currently active! Type " .. prefix .. "cmds to view commands.")
+			chat("Im currently active! Type " .. prefix .. "cmds to view commands.")
 		end
 	end
 end)
