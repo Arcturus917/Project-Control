@@ -503,105 +503,27 @@ flag = {
 			chat(game.JobId)
 		end,
 	},
-    local replacements = {
-        sex = "sâ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢xâ€¢",
-        fuck = "fâ€¢â€¢â€¢â€¢â€¢â€¢uâ€¢câ€¢kâ€¢",
-        shit = "â€¢sâ€¢â€¢â€¢â€¢â€¢â€¢hâ€¢iâ€¢tâ€¢",
-        dick = "dâ€¢â€¢â€¢â€¢â€¢â€¢iâ€¢â€¢â€¢â€¢câ€¢kâ€¢â€¢",
-        cock = "câ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢câ€¢kâ€¢",
-        nigga = "nâ€¢iâ€¢gâ€¢â€¢â€¢gâ€¢a",
-        ["0"] = "\xEF\xBC\x90â€¢", ["1"] = "\xEF\xBC\x91â€¢",
-        ["2"] = "\xEF\xBC\x92â€¢", ["3"] = "\xEF\xBC\x93â€¢",
-        ["4"] = "\xEF\xBC\x94â€¢", ["5"] = "\xEF\xBC\x95â€¢",
-        ["6"] = "\xEF\xBC\x96â€¢", ["7"] = "\xEF\xBC\x97â€¢",
-        ["8"] = "\xEF\xBC\x98â€¢", ["9"] = "\xEF\xBC\x99â€¢"
-    }
-
-    local lowerInput = input
-
-    for word, replacement in pairs(replacements) do
-        lowerInput = lowerInput:gsub("(%s?)(" .. word .. ")(%s?)", function(before, matched, after)
-            local modifiedReplacement = replacement
-            return before .. "{" .. modifiedReplacement .. "}" .. after
-        end)
-    end
-
-    local result = ""
-    local insideReplacedWord = false
-
-    for i = 1, #lowerInput do
-        local char = lowerInput:sub(i, i)
-
-        if char == "{" then
-            insideReplacedWord = true
-        elseif char == "}" then
-            insideReplacedWord = false
-        elseif insideReplacedWord then
-            result = result .. char
-        elseif char == " " then
-            result = result .. "\b"
-        else
-            result = result .. char
-            if i < #lowerInput and lowerInput:sub(i + 1, i + 1) ~= " " then
-                result = result .. "â€¢"
-            end
-        end
-    end
-
-    result = result:gsub("{", ""):gsub("}", "")
-    result = result:gsub("â€¢", "\xEF\xBF\xB8")
-    result = result:gsub("|", "\r")
-
-    return result
-end
-
--- Function to send chat message
-local function sendMessage(message)
-    if game:GetService("TextChatService"):FindFirstChild("TextChannels") then
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(message)
-    else
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
-    end
-end
-
--- Commands
-say = {
-    Name = "say",
-    Aliases = {"chat"},
-    Use = "Says the <message> in chat!",
-    Enabled = true,
-    CommandFunction = function(msg, args, speaker)
-        local tosay
-
-        if args[1] == "say" then
-            tosay = string.sub(msg, 6)
-        else
-            tosay = string.sub(msg, 8)
-        end
-
-        local speakerplayer = game.Players:FindFirstChild(speaker)
-
-        if not speakerplayer then return end
-
-        sendMessage(speakerplayer.DisplayName .. ": " .. tosay)
-    end,
-}
-
--- New Bypass Command
-bypass = {
-    Name = "bypass",
-    Aliases = {"byp"},
-    Use = "Bypass and send <message> in chat!",
-    Enabled = true,
-    CommandFunction = function(msg, args, speaker)
-        local toBypass = string.sub(msg, 9) -- Extract the message after ".bypass "
-
-        if not toBypass or toBypass == "" then return end
-
-        local modifiedMessage = modifyText(toBypass)
-        sendMessage(modifiedMessage)
-    end,
-},
+	say = {
+		Name = "say",
+		Aliases = {"chat"},
+		Use = "Says the <message> in chat!",
+		Enabled = true,
+		CommandFunction = function(msg, args, speaker)
+			local tosay
+			
+			if args[1] == "say" then
+				tosay = string.sub(msg, 6)
+			else
+				tosay = string.sub(msg, 8)
+			end
+			
+			local speakerplayer = game.Players:FindFirstChild(speaker)
+			
+			if not speakerplayer then return end
+			
+			if altctrl then chat(tosay) else chat(speakerplayer.DisplayName .. ": " .. tosay) end
+		end,
+	},
 	pick = {
 		Name = "pick",
 		Aliases = {"choose"},
