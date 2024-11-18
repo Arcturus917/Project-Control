@@ -102,10 +102,10 @@ local funfacts = {
 local messageReceived = game.TextChatService.TextChannels.RBXGeneral.MessageReceived
 
 local commandsMessage = {
-	"|cmds|, |reset|, |say <message>|, |pick <options>|, |dance|, |whitelist <player>|, |blacklist <player>|, |coinflip|, |random <min> <max>|, |bring|, |walkto <player>|",
-	"|setprefix <newPrefix>|, |setstatus <newStatus>|, |clearStatus|, |point|, |wave|, |funfact|, |time|, |speed|, |fps|, |sit|, |rush|, |randommove|, |randomplayer|, |rickroll|, |disablecommand <command>|",
-	"|salute|, |announce <announcement>|, |help <command>|, |jobid|, |aliases <command>|, |math <operation> <nums>|, |changelogs|, |gamename|, |playercount|, |maxplayers|, |toggleall|, |setinterval|",
-	"|lua <lua>|, |ping, catch <player>|, |copychat <player>|, |cheer|, |stadium|, |spin <speed>|, |float <height>|, |orbit <speed> <radius>|, |jump|, |follow|, |unfollow|, |executor|",
+	"cmds, reset, say <message>, pick <options>, dance, whitelist <player>, blacklist <player>, coinflip, random <min> <max>, bring, walkto <player>",
+	"setprefix <newPrefix>, setstatus <newStatus>, clearStatus, point, wave, funfact, time, speed, fps, sit, rush, randommove, randomplayer, rickroll, disablecommand <command>",
+	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
+	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
 }
 
 local orbitcon
