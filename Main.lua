@@ -106,7 +106,7 @@ local commandsMessage = {
 	"setprefix <newPrefix>, setstatus <newStatus>, clearStatus, point, wave, funfact, time, speed, fps, sit, rush, randommove, randomplayer, rickroll, disablecommand <command>",
 	"salute, announce <announcement>, help <command>, jobid, aliases <command>, math <operation> <nums>, changelogs, gamename, playercount, maxplayers, toggleall, setinterval",
 	"lua <lua>, ping, catch <player>, copychat <player>, cheer, stadium, spin <speed>, float <height>, orbit <speed> <radius>, jump, follow, unfollow, executor",
-	"flag, Inf",
+	"flag, inf",
 }
 local flagMessage = {
     "🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴",
@@ -504,8 +504,8 @@ flag = {
 		end,
 	},
 	Run = {
-    Name = "Run",
-    Aliases = {"Inf"},
+    Name = "run",
+    Aliases = {"inf"},
     Use = "Runs the Inf Yield from user",
     Enabled = true,
     CommandFunction = function(msg, args, speaker)
