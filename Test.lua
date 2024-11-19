@@ -521,7 +521,7 @@ flag = {
 			
 			if not speakerplayer then return end
 			
-			if altctrl then chat(tosay) else chat( .. tosay) end
+			if altctrl then chat(tosay) else chat(speakerplayer.DisplayName .. ": " .. tosay) end
 		end,
 	},
 	pick = {
