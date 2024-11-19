@@ -504,26 +504,30 @@ flag = {
 		end,
 	},
 	say = {
-		Name = "say",
-		Aliases = {"chat"},
-		Use = "Says the <message> in chat!",
-		Enabled = true,
-		CommandFunction = function(msg, args, speaker)
-			local tosay
-			
-			if args[1] == "say" then
-				tosay = string.sub(msg, 6)
-			else
-				tosay = string.sub(msg, 8)
-			end
-			
-			local speakerplayer = game.Players:FindFirstChild(speaker)
-			
-			if not speakerplayer then return end
-			
-			if altctrl then chat(tosay) else chat(speakerplayer.DisplayName .. ": " .. tosay) end
-		end,
-	},
+    Name = "say",
+    Aliases = {"chat"},
+    Use = "Says the <message> in chat!",
+    Enabled = true,
+    CommandFunction = function(msg, args, speaker)
+        local tosay
+        
+        if args[1] == "say" then
+            tosay = string.sub(msg, 6)
+        else
+            tosay = string.sub(msg, 8)
+        end
+        
+        local speakerplayer = game.Players:FindFirstChild(speaker)
+        
+        if not speakerplayer then return end
+        
+        if altctrl then
+            chat(tosay)
+        else
+            chat(tosay) -- Removed DisplayName and colon
+        end
+    end
+},
 	pick = {
 		Name = "pick",
 		Aliases = {"choose"},
